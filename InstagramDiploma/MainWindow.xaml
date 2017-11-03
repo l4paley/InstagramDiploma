@@ -14,7 +14,7 @@
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="MainWindow" Height="431" Width="800">
+        Title="MainWindow" Height="439" Width="808">
 
     <Grid x:Name="tabGrid" >
         <Grid.ColumnDefinitions>
