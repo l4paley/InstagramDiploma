@@ -14,24 +14,52 @@
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="MainWindow" Height="400" Width="800">
+        Title="MainWindow" Height="431" Width="800">
 
-    <Grid >
-
+    <Grid x:Name="tabGrid" >
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="500" />
-            <ColumnDefinition />
+            <ColumnDefinition Width="800" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="364"/>
-            <RowDefinition />
+            <RowDefinition  Height="400"/>
         </Grid.RowDefinitions>
-        <dragablz:TabablzControl Grid.ColumnSpan="2" Height="370" VerticalAlignment="Top" Grid.RowSpan="2"  >
+        <dragablz:TabablzControl  Height="400" VerticalAlignment="Top" HorizontalAlignment="Stretch"  Margin="0,0,8,0"  >
             <dragablz:TabablzControl.InterTabController>
                 <dragablz:InterTabController />
             </dragablz:TabablzControl.InterTabController>
-            <TabItem Header="HELLO">
-                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+            <TabItem Header="Main Window">
+                <Grid x:Name="mainWindowGrid">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="400" />
+                        <ColumnDefinition Width="200" />
+                        <ColumnDefinition Width="200" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition  Height="370"/>
+                    </Grid.RowDefinitions>
+                    <materialDesign:Card Margin="10,10,5,10" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Width="180">
+                        <ListBox x:Name="listBox1"  />
+                    </materialDesign:Card>
+                    <materialDesign:Card Margin="5,10,10,10" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Width="180" >
+                        <ListBox x:Name="listBox2"  />
+                    </materialDesign:Card>
+
+                    <StackPanel Grid.Column="1" Grid.Row="0" Margin="0,0,0,40">
+                        <Button x:Name="buttonAcc" Margin="10,19,10,10" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Content="Add accounts" Click="buttonAcc_Click" />
+                        <Button x:Name="buttonProxy" Margin="10,0,10,10" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Content="Add Proxy" />
+                        <TextBlock Text="Number of Cycle"  Margin="10,7,10,10" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="180"/>
+                        <TextBlock Text="Number of Threads"  Margin="10,7,10,10" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="180"/>
+                        <TextBlock Text="Link"  Margin="10,7,10,10" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="180"/>
+                        <Button x:Name="buttonStart" Margin="10,10,10,10" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="120" Content="Start" />
+                    </StackPanel>
+                    <StackPanel Grid.Column="2" Grid.Row="0" Margin="0,0,0,40">
+                        <Button x:Name="buttonDetect" Margin="-10,39,10,10" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170"  Content="Detect from Database" />
+                        <TextBox x:Name="textBoxCycle" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Margin="-5,16,10,10"  />
+                        <TextBox x:Name="textBoxThreads" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Margin="-5,0,10,10"  />
+                        <TextBox x:Name="textBoxLink" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Margin="-5,0,10,10"  />
+                        <Button x:Name="buttonStop" Margin="10,10,10,10" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="120" Content="Stop" />
+                    </StackPanel>
+                </Grid>
             </TabItem>
             <TabItem Header="MATERIAL">
                 <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
@@ -40,34 +68,6 @@
                 <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
             </TabItem>
         </dragablz:TabablzControl>
-
-        <Grid Grid.Column="0" Grid.Row="0" Margin="10,31">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="240" />
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="320"/>
-                <RowDefinition />
-            </Grid.RowDefinitions>
-            <materialDesign:Card Margin="10" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" >
-                <ListBox x:Name="listBox1"  />
-            </materialDesign:Card>
-            <materialDesign:Card Margin="10" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
-                <ListBox x:Name="listBox2"  />
-            </materialDesign:Card>
-
-        </Grid>
-        <Grid Grid.Column="1" Grid.Row="0" Margin="0,40,0,0">
-            <StackPanel Margin="0,0,0,34">
-                <Button x:Name="button1" Margin="10,10,10,10" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Content="Add accounts" />
-                <Button x:Name="button2" Margin="10,0,10,10" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Content="Add Proxy" />
-            </StackPanel>
-
-
-        </Grid>
-
-
     </Grid>
 
 </Window>

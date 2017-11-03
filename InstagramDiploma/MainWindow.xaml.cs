@@ -35,7 +35,33 @@ namespace InstagramDiploma
             listBox1.Items.Add("1234");
             listBox1.Items.Add("12345");
             listBox1.Items.Add("123456");
+            listBox1.Items.Add("123");
+            listBox1.Items.Add("1234");
+            listBox1.Items.Add("12345");
+            listBox1.Items.Add("123456");
+            listBox1.Items.Add("123");
+            listBox1.Items.Add("1234");
+            listBox1.Items.Add("12345");
+            listBox1.Items.Add("123456");
+            listBox1.Items.Add("123");
+            listBox1.Items.Add("1234");
+            listBox1.Items.Add("12345");
+            listBox1.Items.Add("123456");
+            listBox1.Items.Add("123");
+            listBox1.Items.Add("1234");
+            listBox1.Items.Add("12345");
+            listBox1.Items.Add("123456");
 
+            listBox2.Items.Add("123");
+            listBox2.Items.Add("1234");
+            listBox2.Items.Add("12345");
+            listBox2.Items.Add("123456");
+
+        }
+
+        private void buttonAcc_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }
