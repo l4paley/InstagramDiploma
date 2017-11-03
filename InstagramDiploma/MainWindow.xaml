@@ -23,6 +23,7 @@
         <Grid.RowDefinitions>
             <RowDefinition  Height="400"/>
         </Grid.RowDefinitions>
+       
         <dragablz:TabablzControl  Height="400" VerticalAlignment="Top" HorizontalAlignment="Stretch"  Margin="0,0,8,0"  >
             <dragablz:TabablzControl.InterTabController>
                 <dragablz:InterTabController />
@@ -37,10 +38,10 @@
                     <Grid.RowDefinitions>
                         <RowDefinition  Height="370"/>
                     </Grid.RowDefinitions>
-                    <materialDesign:Card Margin="10,10,5,10" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Width="180">
+                    <materialDesign:Card Margin="10,10,5,20" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Width="180">
                         <ListBox x:Name="listBox1"  />
                     </materialDesign:Card>
-                    <materialDesign:Card Margin="5,10,10,10" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Width="180" >
+                    <materialDesign:Card Margin="5,10,10,20" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Width="180" >
                         <ListBox x:Name="listBox2"  />
                     </materialDesign:Card>
 
@@ -61,10 +62,40 @@
                     </StackPanel>
                 </Grid>
             </TabItem>
-            <TabItem Header="MATERIAL">
-                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+            <TabItem Header="Task Scheduler">
+                <Grid x:Name="taskSchedulerGrid">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="305" />
+                        <ColumnDefinition Width="103" />
+                        <ColumnDefinition Width="103" />
+                        <ColumnDefinition Width="255" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition  Height="370"/>
+                    </Grid.RowDefinitions>
+                    <Calendar Grid.Column="0" Margin="10,10,-80,10"  />
+                    <StackPanel Grid.Column="1" Grid.Row="0" >
+                        <TextBlock Text="Time to start"  Margin="0,20,-10,10" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="180"/>
+                        <TextBlock Text="Profile link"  Margin="0,10,-10,10" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="180"/>
+                        <TextBlock Text="Number of ticks"  Margin="0,10,-10,10" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="180"/>
+                        <Button Margin="0,10,-10,10" HorizontalAlignment="Left" VerticalAlignment="Top" Width="110" Content="Add "/>
+                        <Button Margin="0,10,-10,10" HorizontalAlignment="Left" VerticalAlignment="Top" Width="110" Content="Delete"/>
+                        <Button Margin="0,10,-10,10" HorizontalAlignment="Left" VerticalAlignment="Top" Width="110" Content="Clear all"/>
+                        
+                        
+                    </StackPanel>
+                    <StackPanel Grid.Column="2" Grid.Row="0" >
+                        <TextBox x:Name="textBoxStime" HorizontalAlignment="Center" VerticalAlignment="Top" Width="80" Margin="10,10,0,10"  />
+                        <TextBox x:Name="textBoxPlink" HorizontalAlignment="Center" VerticalAlignment="Top" Width="80" Margin="10,-1,0,10"  />
+                        <TextBox x:Name="textBoxTriggerNumbers" HorizontalAlignment="Center" VerticalAlignment="Top" Width="80" Margin="10,0,0,10"  />
+                        <Button Margin="0,14,-30,0" HorizontalAlignment="Right" VerticalAlignment="Top" Width="110" Height="136" Content="Start" BorderThickness="50"/>
+                    </StackPanel>
+                    <materialDesign:Card Margin="10,10,5,15" Grid.Column="3" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Width="200">
+                        <ListBox x:Name="listBox3"  />
+                    </materialDesign:Card>
+                </Grid>
             </TabItem>
-            <TabItem Header="DESIGN">
+            <TabItem Header="Settings">
                 <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
             </TabItem>
         </dragablz:TabablzControl>
