@@ -39,10 +39,16 @@
                         <RowDefinition  Height="370"/>
                     </Grid.RowDefinitions>
                     <materialDesign:Card Margin="10,10,5,20" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Width="180">
-                        <ListBox x:Name="listBox1"  />
+                        <ListBox x:Name="listBox1" SelectedValuePath="Content" >
+                            <ListBoxItem Content="CristaAdame:Ahngee7i:dzhuletta.whilst.aslaxanova@mail.ru:ecjjr6fQ:wack.renaud@free.fr:guinness"/>
+                            <ListBoxItem Content="DaiseyDahl:Ohthohn7:vera.dyukkieva.85@mail.ru:l83piDTY:roosje.goemaere@telenet.be:Nocturnes1"/>
+                        </ListBox>
                     </materialDesign:Card>
                     <materialDesign:Card Margin="5,10,10,20" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Width="180" >
-                        <ListBox x:Name="listBox2"  />
+                        <ListBox x:Name="listBox2"  >
+                            <ListBoxItem Content="217.29.53.102:15853:qy0DzK:pgkGNz"/>
+                            <ListBoxItem Content="217.29.53.102:15853:qy0DzK:pgkGNz"/>
+                        </ListBox>
                     </materialDesign:Card>
 
                     <StackPanel Grid.Column="1" Grid.Row="0" Margin="0,0,0,40">
@@ -51,7 +57,7 @@
                         <TextBlock Text="Number of Cycle"  Margin="10,7,10,10" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="180"/>
                         <TextBlock Text="Number of Threads"  Margin="10,7,10,10" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="180"/>
                         <TextBlock Text="Link"  Margin="10,7,10,10" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="180"/>
-                        <Button x:Name="buttonStart" Margin="10,10,10,10" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="120" Content="Start" />
+                        <Button x:Name="buttonStart" Margin="10,10,10,10" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="120" Content="Start" Click="buttonStart_Click" />
                     </StackPanel>
                     <StackPanel Grid.Column="2" Grid.Row="0" Margin="0,0,0,40">
                         <Button x:Name="buttonDetect" Margin="-10,39,10,10" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170"  Content="Detect from Database" />
