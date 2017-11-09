@@ -46,10 +46,12 @@ namespace InstagramDiploma
            // ListBoxItem mySelectedItem = listBox1.SelectedItem as ListBoxItem;
            // MessageBox.Show(mySelectedItem.Content.ToString());
 
-            string listenBox2 = Convert.ToString(listBox2.Items[0]);
+           /* string listenBox2 = Convert.ToString(listBox2.Items[0]);
             string[] ProxyPortLoginpPwdP = listenBox2.Split(':');
-            string PROXY = ProxyPortLoginpPwdP[0] + ":" + ProxyPortLoginpPwdP[1];
+            string PROXY = ProxyPortLoginpPwdP[1] + ":" + ProxyPortLoginpPwdP[2];
             MessageBox.Show(listenBox2);
+            MessageBox.Show(PROXY);*/
+
         }
 
         private void buttonStart_Click(object sender, RoutedEventArgs e)
@@ -81,7 +83,7 @@ namespace InstagramDiploma
 
         public async Task<int> tbCycle()
         {
-            await Task.Delay(100);
+            await Task.Delay(0);
             return await Task.FromResult(Convert.ToInt32(textBoxCycle.Text)); 
         }
         int itCount;
@@ -111,7 +113,7 @@ namespace InstagramDiploma
             FirefoxProfile profileInstagram = profileManager.GetProfile("Selenium");
             FirefoxProfile profileMail = profileManager2.GetProfile("Mail.ru");
             //profileManager.GetProfile("Selenium");
-            string PROXY = ProxyPortLoginpPwdP[0] + ":" + ProxyPortLoginpPwdP[1];
+            string PROXY = ProxyPortLoginpPwdP[1] + ":" + ProxyPortLoginpPwdP[2];
             MessageBox.Show(PROXY);
             Proxy proxy = new Proxy()
             {
@@ -126,15 +128,15 @@ namespace InstagramDiploma
             // FirefoxDriver browserMail = new FirefoxDriver(profileMail);
             //FirefoxDriver browserInstagram = new FirefoxDriver();
 
-            browserInstagram.Navigate().GoToUrl("https://" + ProxyPortLoginpPwdP[2] + ":" + ProxyPortLoginpPwdP[3] + "@instagram.com/accounts/login/"); //Good  http://username:password@website.com
+            browserInstagram.Navigate().GoToUrl("https://" + ProxyPortLoginpPwdP[3] + ":" + ProxyPortLoginpPwdP[4] + "@instagram.com/accounts/login/"); //Good  http://username:password@website.com
                                                                                                                                                         //Browser2.Navigate().GoToUrl("https://" + ProxyPortLoginpPwdP[2] + ":" + ProxyPortLoginpPwdP[3] + "@mail.ru"); //Good
 
 
             Thread.Sleep(3000);
 
-            browserInstagram.FindElement(By.XPath("//input[@name='username']"), 5).SendKeys(AccPwdMailPwd[0]);
+            browserInstagram.FindElement(By.XPath("//input[@name='username']"), 5).SendKeys(AccPwdMailPwd[1]);
             Thread.Sleep(3000);
-            browserInstagram.FindElement(By.XPath("//input[@name='password']"), 5).SendKeys(AccPwdMailPwd[1]); //ListBox1Item2(instapwd)
+            browserInstagram.FindElement(By.XPath("//input[@name='password']"), 5).SendKeys(AccPwdMailPwd[2]); //ListBox1Item2(instapwd)
             Thread.Sleep(3000);
             browserInstagram.FindElement(By.XPath("//*[@id=\"react-root\"]//section//main//div//article//div//div[1]//div//form//span//button"), 5).Click(); // InstaLoginButton
             Thread.Sleep(3001);
