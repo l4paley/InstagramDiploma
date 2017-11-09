@@ -46,11 +46,12 @@ namespace InstagramDiploma
            // ListBoxItem mySelectedItem = listBox1.SelectedItem as ListBoxItem;
            // MessageBox.Show(mySelectedItem.Content.ToString());
 
-           /* string listenBox2 = Convert.ToString(listBox2.Items[0]);
+           string listenBox2 = Convert.ToString(listBox1.Items[0]);
             string[] ProxyPortLoginpPwdP = listenBox2.Split(':');
             string PROXY = ProxyPortLoginpPwdP[1] + ":" + ProxyPortLoginpPwdP[2];
             MessageBox.Show(listenBox2);
-            MessageBox.Show(PROXY);*/
+            MessageBox.Show(PROXY.TrimStart());
+            textBoxLink.Text = ProxyPortLoginpPwdP[2];
 
         }
 
@@ -103,7 +104,7 @@ namespace InstagramDiploma
         }
         private void StartStandartLiker(int accountId)
         {
-            MessageBox.Show(Convert.ToString(accountId));
+           // MessageBox.Show(Convert.ToString(accountId));
             string listenBox1 = Convert.ToString(listBox1.Items[accountId]);
             string[] AccPwdMailPwd = listenBox1.Split(':');
             string listenBox2 = Convert.ToString(listBox2.Items[accountId]);
@@ -113,8 +114,9 @@ namespace InstagramDiploma
             FirefoxProfile profileInstagram = profileManager.GetProfile("Selenium");
             FirefoxProfile profileMail = profileManager2.GetProfile("Mail.ru");
             //profileManager.GetProfile("Selenium");
-            string PROXY = ProxyPortLoginpPwdP[1] + ":" + ProxyPortLoginpPwdP[2];
-            MessageBox.Show(PROXY);
+            string PROXY1 = ProxyPortLoginpPwdP[1] + ":" + ProxyPortLoginpPwdP[2];
+            string PROXY = PROXY1.TrimStart();
+           // MessageBox.Show(PROXY);
             Proxy proxy = new Proxy()
             {
                 HttpProxy = PROXY,
@@ -134,7 +136,7 @@ namespace InstagramDiploma
 
             Thread.Sleep(3000);
 
-            browserInstagram.FindElement(By.XPath("//input[@name='username']"), 5).SendKeys(AccPwdMailPwd[1]);
+            browserInstagram.FindElement(By.XPath("//input[@name='username']"), 5).SendKeys(AccPwdMailPwd[1].TrimStart());
             Thread.Sleep(3000);
             browserInstagram.FindElement(By.XPath("//input[@name='password']"), 5).SendKeys(AccPwdMailPwd[2]); //ListBox1Item2(instapwd)
             Thread.Sleep(3000);
